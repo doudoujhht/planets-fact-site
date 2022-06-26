@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Planets fact site</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div>the planets</div>
+      <ul>
+        <li onclick="update(mercury)" style="--bg:#419EBB;">Mercury</li>
+        <li onclick="update(venus)" style="--bg:#eda249;">Venus</li>
+        <li onclick="update(earth)" style="--bg:#6d2ed5;">Earth</li>
+        <li onclick="update(mars)" style="--bg:#d14c32;">mars</li>
+        <li onclick="update(jupiter)" style="--bg:#d83a34;">jupiter</li>
+        <li onclick="update(saturn)" style="--bg:#cd5120;">saturn</li>
+        <li onclick="update(uranus)" style="--bg:#1ec1a2;">uranus</li>
+        <li onclick="update(neptune)" style="--bg:#2d68f0;">neptune</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="first-section">
+      <div id="img-container"><img src="assets/planet-earth.svg" alt="" id="image">
+      <img src="" alt="" id="zoom"></div>
+      <div id="right">
+        <div id="info">
+          <h1 id="title">Earth</h1>
+          <p id="text">Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.</p>
+          <p id="source">Source: <a href="" id="source_link" target="_blank">Wikipedia</a></p>
+        </div>
+        <div id="categorie">
+          <p id="overview" class="active" onclick="updateInfo('overview',overview)"><span class="number">01 </span> overview</p>
+          <p id="internal" onclick="updateInfo('structure', internal)"><span class="number">02 </span> internal structure</p>
+          <p id="surface" onclick="updateInfo('geology', geology)"><span class="number">03 </span> surface geology</p>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+    <section id="second-section">
+      <div class="rectangle" id="rectange1">
+        <p class="titre">rotation time</p>
+        <span id="stat1">
+          0.99 days
+        </span>
+      </div>
+
+      <div class="rectangle" id="rectange2">
+        <p class="titre">revolution time</p>
+        <span id="stat2">
+          365 days
+        </span>
+      </div>
+
+      <div class="rectangle" id="rectange3">
+        <p class="titre">radius</p>
+        <span id="stat3">
+          6,371 km
+        </span>
+      </div>
+
+      <div class="rectangle" id="rectange4">
+        <p class="titre">average temp</p>
+        <span id="stat4">
+          16C
+        </span>
+      </div>
+    </section>
+  </main>
+</body>
+<script type="text/javascript" src="data.js"></script>
+<script type="" src="index.js"></script>
+</html>
