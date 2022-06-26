@@ -11,19 +11,104 @@
 <body>
   <header>
     <nav>
-      <div>the planets</div>
-      <ul>
-        <li onclick="update(mercury)" style="--bg:#419EBB;">Mercury</li>
-        <li onclick="update(venus)" style="--bg:#eda249;">Venus</li>
-        <li onclick="update(earth)" style="--bg:#6d2ed5;">Earth</li>
-        <li onclick="update(mars)" style="--bg:#d14c32;">mars</li>
-        <li onclick="update(jupiter)" style="--bg:#d83a34;">jupiter</li>
-        <li onclick="update(saturn)" style="--bg:#cd5120;">saturn</li>
-        <li onclick="update(uranus)" style="--bg:#1ec1a2;">uranus</li>
-        <li onclick="update(neptune)" style="--bg:#2d68f0;">neptune</li>
+      <div id="mobile-nav">
+        <div>the planets</div>
+        <div id="hamburger-container" onclick="nav()">
+          <img src="assets/icon-hamburger.svg" alt="" srcset="" >
+        </div>
+      </div>
+      <ul id="nav-list">
+        <li onclick="update(mercury)" style="--bg:#419EBB;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">Mercury</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(venus)" style="--bg:#eda249;">
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">Venus</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(earth)" style="--bg:#6d2ed5;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">Earth</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(mars)" style="--bg:#d14c32;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">mars</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(jupiter)" style="--bg:#d83a34;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">jupiter</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(saturn)" style="--bg:#cd5120;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">saturn</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(uranus)" style="--bg:#1ec1a2;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">uranus</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
+        <li onclick="update(neptune)" style="--bg:#2d68f0;"> 
+          <div class="left-mobile">
+            <div class="planet-icon"></div> <span class="planet-name">neptune</span>
+          </div>
+
+          <div class="right-mobile">
+            <div class="arrow"></div>
+          </div>
+        </li>
+
       </ul>
+
     </nav>
   </header>
+
+  <div id="categorie-1">
+    <p id="overview-1" class="active" onclick="updateInfo('overview',overview,overview1)">overview</p>
+    <p id="internal-1" onclick="updateInfo('structure', internal,internal1)">structure</p>
+    <p id="surface-1" onclick="updateInfo('geology', geology, geology1)">surface</p>
+  </div>
+
   <main>
     <section id="first-section">
       <div id="img-container"><img src="assets/planet-earth.svg" alt="" id="image">
@@ -34,10 +119,10 @@
           <p id="text">Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.</p>
           <p id="source">Source: <a href="" id="source_link" target="_blank">Wikipedia</a></p>
         </div>
-        <div id="categorie">
-          <p id="overview" class="active" onclick="updateInfo('overview',overview)"><span class="number">01 </span> overview</p>
-          <p id="internal" onclick="updateInfo('structure', internal)"><span class="number">02 </span> internal structure</p>
-          <p id="surface" onclick="updateInfo('geology', geology)"><span class="number">03 </span> surface geology</p>
+        <div id="categorie" class="sub">
+          <p id="overview" class="active" onclick="updateInfo('overview',overview,overview1)"><span class="number">01 </span> overview</p>
+          <p id="internal" onclick="updateInfo('structure', internal,internal1)"><span class="number">02 </span> internal structure</p>
+          <p id="surface" onclick="updateInfo('geology', geology, geology1)"><span class="number">03 </span> surface geology</p>
         </div>
       </div>
 

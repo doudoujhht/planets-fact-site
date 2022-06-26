@@ -18,9 +18,17 @@ const root = document.querySelector(":root")
 const overview = document.getElementById('overview')
 const internal = document.getElementById("internal")
 const geology = document.getElementById('surface')
+const overview1 = document.getElementById('overview-1')
+const internal1 = document.getElementById("internal-1")
+const geology1 = document.getElementById('surface-1')
+const main = document.querySelector("main")
+const categorie1 = document.getElementById('categorie-1')
+const navList = document.getElementById('nav-list')
 let activePlanet = earth
 let activeInfo = overview
 let activeInfoString = "overview"
+let activeInfoMobile = overview1
+let ham = true
 
 
 function update(planet) {
@@ -30,19 +38,24 @@ function update(planet) {
     stat3.innerHTML = planet.radius
     stat4.innerHTML = planet.temperature
     activePlanet = planet
-    updateInfo(activeInfoString, activeInfo)
+    updateInfo(activeInfoString, activeInfo,activeInfoMobile)
     root.style.setProperty('--color', planet.color)
 }
 
-function updateInfo(info, infoElement){
+function updateInfo(info, infoElement,infoElementMobile){
     document.getElementById("zoom").src = ""
-    console.log(activeInfo)
     activeInfo.classList.remove("active")
+    activeInfoMobile.classList.remove("active")
+    console.log(activeInfoMobile)
     description.innerHTML = activePlanet[info].content;
     sourceLink.href = activePlanet[info].source
     activeInfo = infoElement
     activeInfoString = info
+    activeInfoMobile = infoElementMobile
+    console.log(activeInfoMobile)
     activeInfo.classList.add("active")
+    activeInfoMobile.classList.add("active")
+    console.log(activeInfoMobile)
     if (info == "structure"){
         image.src = activePlanet.images["internal"]
     }
@@ -53,4 +66,37 @@ function updateInfo(info, infoElement){
     else{
         image.src = activePlanet.images.planet
     }
+    if(window.innerWidth<600){
+        main.style.display = "block"
+        main.style.opacity = "100"
+        categorie1.style.display = "flex"
+        categorie1.style.opacity = "100"
+        navList.style.display = "none"
+        ham = true
+    }
 }
+
+function nav(){
+    if(ham){   main.style.display = "none"
+        main.style.opacity = "0"
+        categorie1.style.display = "none"
+        categorie1.style.opacity = "0"
+        navList.style.display = "flex"
+        ham = false}
+    else{
+        main.style.display = "block"
+        main.style.opacity = "100"
+        categorie1.style.display = "flex"
+        categorie1.style.opacity = "100"
+        navList.style.display = "none"
+        ham = true}
+}
+
+window.addEventListener("resize", function(){
+    if(window.innerWidth>600){
+        navList.style.display = "flex"
+        main.style.display = "block"
+        categorie1.style.display = "none"
+    }
+})
+
